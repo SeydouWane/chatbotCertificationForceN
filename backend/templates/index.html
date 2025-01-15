@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot Diabète</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="chatbot-container">
+      <h1>Chatbot Diabète</h1>
+      <div class="chatbox" id="chatbox">
+        <div class="bot-message">
+          <p>👋 Bonjour! Posez-moi une question sur le diabète.</p>
+        </div>
+      </div>
+      <form
+        action="/ask"
+        method="POST"
+        class="chat-form"
+        onsubmit="return sendMessage(event)"
+      >
+        <input
+          type="text"
+          name="question"
+          id="userInput"
+          placeholder="Tapez votre question..."
+          required
+        />
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
